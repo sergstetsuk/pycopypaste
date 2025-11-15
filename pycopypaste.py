@@ -1,4 +1,5 @@
 import argparse
+import time
 import pyperclip
 import pyautogui
 
@@ -57,6 +58,7 @@ for elem_type in type_list:
     elif (elem_type == 't'):
         pyperclip.copy(elem_val)
         pyautogui.hotkey('ctrl', 'v')
+        time.sleep(0.1)
 
     pyautogui.hotkey('\t')
 

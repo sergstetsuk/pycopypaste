@@ -5,7 +5,7 @@ The tool parses the Clipboard content as a tab-separated columns list (expected 
 
 Usage:
 ```
-python3 pycopypaste.py -s "\<SCRIPT\>"
+python3 pycopypaste.py -s "<SCRIPT>"
 ```
 
 Template SCRIPT commands:

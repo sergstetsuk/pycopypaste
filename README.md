@@ -1,7 +1,7 @@
 # pycopypaste
-Configurable automation tool for multiple copypaste operations according to regex-style template script
+Configurable automation tool for multiple copypaste operations according to regex-style template script.
 
-The tool parses the clipboard (tab-separated list of columns) and processes them one-by-one according to the template script commands.
+The tool parses the Clipboard content as a tab-separated columns list (expected a line from MS Excel or LibreOffice Calc, copied to the Clipboard) and processes them one-by-one according to the template script commands.
 
 Usage:
 ```

@@ -9,11 +9,11 @@ python3 pycopypaste.py -s "<SCRIPT>"
 ```
 
 Template SCRIPT commands:
-a - perform Alt+Tab to switch back to previous window
-t - perform Ctrl+V to insert text data. Press Tab to move to next UI control.
-c - perform Space press if value is 1. Skip otherwise. Press Tab afterwards.
-s - skip operation (Do nothing). Press Tab to move to next UI control.
-. - skip data column without moving to the next UI control.
+-  a - perform Alt+Tab to switch back to previous window
+-  t - perform Ctrl+V to insert text data. Press Tab to move to next UI control.
+-  c - perform Space press if value is 1. Skip otherwise. Press Tab afterwards.
+-  s - skip operation (Do nothing). Press Tab to move to next UI control.
+-  . - skip data column without moving to the next UI control.
 
 Example usage:
 ```

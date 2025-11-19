@@ -7,27 +7,33 @@ import pyautogui
 Usage:
 Ctrl+C row in MS Excel or LibreOffice Calc
 Set cursor on the first field in the web form
-pycopypaste -s <paste_flow_script>
+pycopypaste [-v] [-p 0.2] -s <paste_flow_script>
 
-a - Alt+Tab
-t - insert as plain text
-с - set checkbox (1 - toggle checkbox, otherwise - skip)
-s - skip web-form gui element
-. - skip data column from Excel/Calc without changin focused web-form gui element
+-v - verbose mode
+-p - pause in sec
+-s - script to execute
+
+. - skip data column from Excel/Calc without changing focused web-form gui element
+a - Switch to previous window (Alt+Tab)
+r - move to the previous web-fortm gui element (Shift+Tab)
+s - skip web-form gui element (Tab)
+t - insert as plain text (Ctrl+V)
+с - set checkbox (1 - toggle checkbox, otherwise - skip) (Space)
 
 Example:
-    python3 pycopypaste -s "atttctttcttct.tttccccttttt"
+    python3 pycopypaste -s "atcrrttcstttcttct.tttccccttttt"
 """
 excel_line = pyperclip.paste()
 val_list = excel_line.split('\t')
 
 parser = argparse.ArgumentParser(
                     prog='pycopypaste',
-                    description='Automates Copy-Paste routine',
-                    epilog='License GNU GPL')
+                    description='pycopypaste v.0.1. Automates Copy-Paste routine',
+                    epilog='License: GNU General Public License')
 
 parser.add_argument('-s', '--script', required = True)
 parser.add_argument('-v', '--verbose', action = 'store_true')
+parser.add_argument('-p', '--pause', type = float, default = 0.2)
 args = parser.parse_args()
 
 type_list = args.script
@@ -40,6 +46,9 @@ for elem_type in type_list:
         continue
     if (elem_type == 's'):
         pyautogui.hotkey('\t')
+        continue
+    if (elem_type == 'r'):
+        pyautogui.hotkey('shift', '\t')
         continue
     if (len(val_list) <= 0):
         print('No data left in clipboard')
@@ -58,7 +67,7 @@ for elem_type in type_list:
     elif (elem_type == 't'):
         pyperclip.copy(elem_val)
         pyautogui.hotkey('ctrl', 'v')
-        time.sleep(0.1)
+        time.sleep(args.pause)
 
     pyautogui.hotkey('\t')
 

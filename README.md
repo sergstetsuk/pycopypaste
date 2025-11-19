@@ -5,19 +5,25 @@ The tool parses the Clipboard content as a tab-separated columns list (expected 
 
 Usage:
 ```
-python3 pycopypaste.py -s "<SCRIPT>"
+python3 pycopypaste.py [-v] [-t <TIME>] -s "<SCRIPT>"
 ```
+-v - verbose output to console
+
+-p TIME - pause after Ctrl+V in seconds. Default 0.2
+
+-s SCRIPT - copy-paste sequence script
 
 Template SCRIPT commands:
 -  a - perform Alt+Tab to switch back to previous window
 -  t - perform Ctrl+V to insert text data. Press Tab to move to next UI control.
 -  c - perform Space press if value is 1. Skip otherwise. Press Tab afterwards.
 -  s - skip operation (Do nothing). Press Tab to move to next UI control.
+-  r - move to the previous UI control as Shift+Tab.
 -  . - skip data column without moving to the next UI control.
 
 Example usage:
 ```
-python3 pycopypaste.py -s "atttctttcttct.tttccccttttt"
+python3 pycopypaste.py -s "atcrrttctttcttct.tttccccttttt"
 ```
 
 # Installation

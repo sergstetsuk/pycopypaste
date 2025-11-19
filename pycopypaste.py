@@ -15,6 +15,9 @@ pycopypaste [-v] [-p 0.2] -s <paste_flow_script>
 
 . - skip data column from Excel/Calc without changing focused web-form gui element
 a - Switch to previous window (Alt+Tab)
+b - Backspace
+d - Del
+e - Enter
 r - move to the previous web-fortm gui element (Shift+Tab)
 s - skip web-form gui element (Tab)
 t - insert as plain text (Ctrl+V)
@@ -42,13 +45,22 @@ elem_val = ''
 
 for elem_type in type_list:
     if (elem_type == 'a'):
-        pyautogui.hotkey('alt', '\t')
+        pyautogui.hotkey('alt', 'tab')
+        continue
+    if (elem_type == 'b'):
+        pyautogui.hotkey('backspace')
+        continue
+    if (elem_type == 'd'):
+        pyautogui.hotkey('delete')
+        continue
+    if (elem_type == 'e'):
+        pyautogui.hotkey('enter')
         continue
     if (elem_type == 's'):
-        pyautogui.hotkey('\t')
+        pyautogui.hotkey('tab')
         continue
     if (elem_type == 'r'):
-        pyautogui.hotkey('shift', '\t')
+        pyautogui.hotkey('shift', 'tab')
         continue
     if (len(val_list) <= 0):
         print('No data left in clipboard')
@@ -69,6 +81,6 @@ for elem_type in type_list:
         pyautogui.hotkey('ctrl', 'v')
         time.sleep(args.pause)
 
-    pyautogui.hotkey('\t')
+    pyautogui.hotkey('tab')
 
 pyperclip.copy(excel_line)

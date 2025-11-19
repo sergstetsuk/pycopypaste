@@ -20,6 +20,9 @@ Template SCRIPT commands:
 -  s - skip operation (Do nothing). Press Tab to move to next UI control.
 -  r - move to the previous UI control as Shift+Tab.
 -  . - skip data column without moving to the next UI control.
+-  b - press BackSpace
+-  d - press Delete
+-  e - press Enter
 
 Example usage:
 ```

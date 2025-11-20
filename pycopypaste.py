@@ -7,7 +7,7 @@ import pyautogui
 Usage:
 Ctrl+C row in MS Excel or LibreOffice Calc
 Set cursor on the first field in the web form
-pycopypaste [-v] [-p 0.2] -s <paste_flow_script>
+pycopypaste [-v] [-q] [-p <TIME>] -s <SCRIPT>
 
 -v - verbose mode
 -p - pause in sec
@@ -29,12 +29,12 @@ Example:
 """
 parser = argparse.ArgumentParser(
                     prog='pycopypaste',
-                    description='pycopypaste v.0.2. Automates Copy-Paste routine',
+                    description='pycopypaste v0.2. Automates Copy-Paste routine',
                     epilog='License: GNU General Public License')
 
 parser.add_argument('-s', '--script', required = True)
 parser.add_argument('-v', '--verbose', action = 'store_true')
-parser.add_argument('-p', '--pause', type = float, default = 0.2)
+parser.add_argument('-p', '--pause', type = float, default = 0.0)
 parser.add_argument('-q', '--query', action = 'store_true')
 args = parser.parse_args()
 

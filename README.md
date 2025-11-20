@@ -5,13 +5,15 @@ The tool parses the Clipboard content as a tab-separated columns list (expected 
 
 Usage:
 ```
-python3 pycopypaste.py [-v] [-t <TIME>] -s "<SCRIPT>"
+python3 pycopypaste.py [-v] [-q] [-t <TIME>] -s "<SCRIPT>"
 ```
 -v - verbose output to console
 
--p TIME - pause after Ctrl+V in seconds. Default 0.2
+-p TIME - pause after Ctrl+V in seconds. Default 0
 
 -s SCRIPT - copy-paste sequence script
+
+-s - Wait for confirmation before start
 
 Template SCRIPT commands:
 -  a - perform Alt+Tab to switch back to previous window

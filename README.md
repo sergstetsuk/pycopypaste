@@ -13,7 +13,7 @@ python3 pycopypaste.py [-v] [-q] [-t <TIME>] -s "<SCRIPT>"
 
 -s SCRIPT - copy-paste sequence script
 
--s - Wait for confirmation before start
+-q - Query for confirmation before start
 
 Template SCRIPT commands:
 -  a - perform Alt+Tab to switch back to previous window
@@ -28,7 +28,8 @@ Template SCRIPT commands:
 
 Example usage:
 ```
-python3 pycopypaste.py -s "atcrrttctttcttct.tttccccttttt"
+python3 pycopypaste.py -v -p 0.1 -s "atcrrttctttcttct.tttccccttttt"
+python3 pycopypaste.py -q -s "ateststscstststscststescstststststscscscscstststestest"
 ```
 
 # Installation
